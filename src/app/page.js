@@ -57,12 +57,12 @@ export default function Home() {
   const isRTL = language === 'ar';
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-100 dark:from-gray-900 dark:via-gray-800 dark:to-cyan-900 ${isRTL ? 'rtl' : 'ltr'}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-green-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-green-900 ${isRTL ? 'rtl' : 'ltr'}`}>
     <main className="container mx-auto px-4 py-5 relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <motion.div 
         ref={contentRef}
-        className="bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-70 p-6 md:p-8 rounded-2xl shadow-2xl mb-12 min-h-[70vh] flex flex-col justify-between relative overflow-hidden border border-cyan-500 dark:border-cyan-700"
+        className="bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-70 p-6 md:p-8 rounded-2xl shadow-2xl mb-12 min-h-[70vh] flex flex-col justify-between relative overflow-hidden border border-green-500 dark:border-green-700"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -71,20 +71,18 @@ export default function Home() {
             className="absolute inset-0 z-0"
             quantity={100}
             staticity={50}
-            color="#06b6d4" // Cyan color
+            color="#4CAF50" // Green color
           />
           <BorderBeam />
           
-         
-
           <div className="flex flex-col items-center justify-between z-10 mb-8 mt-4">
             <BlurIn
               word={
-                <div className="text-center text-blue-900 dark:text-blue-200 w-full mb-8">  
+                <div className="text-center text-gray-800 dark:text-gray-200 w-full mb-8">  
                   <h1 className="text-5xl md:text-6xl lg:text-7xl mb-4 bg-gray-700 text-transparent bg-clip-text drop-shadow-lg leading-tight md:leading-snug lg:leading-normal">
                     {text[language].title}
                   </h1>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 text-cyan-600">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl mb-6 text-green-600">
                     <WordRotate 
                       words={text[language].subtitle}
                       duration={2000}
@@ -100,18 +98,18 @@ export default function Home() {
                     <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-cyan-600 w-1/2 lg:w-1/6 text-cyan-700 px-6 py-3 text-lg md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center"
+                className="border border-green-600 w-1/2 lg:w-1/6 text-green-700 px-6 py-3 text-lg md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center"
                 >
                   <AnimatedShinyText>{text[language].cta1}</AnimatedShinyText>
-                  <FaCalendarAlt className="ml-0 text-cyan-600" />
+                  <FaCalendarAlt className="ml-0 text-green-600" />
                 </motion.button>
                 <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-blue-800 w-1/2 lg:w-1/6 text-blue-800 px-6 py-3 text-lg md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center"
+                className="border border-gray-800 w-1/2 lg:w-1/6 text-gray-800 px-6 py-3 text-lg md:text-xl rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 flex items-center justify-center"
                 >
                   <AnimatedShinyText>{text[language].cta2}</AnimatedShinyText>
-                  <GrNodes className="ml-0 text-blue-800" />
+                  <GrNodes className="ml-0 text-gray-800" />
                 </motion.button>
               </div>
             </div>
@@ -164,20 +162,20 @@ export default function Home() {
 
 function StatCard({ number, text }) {
   return (
-    <div className="bg-cyan-500 bg-opacity-10 dark:bg-opacity-30 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow">
-      <h3 className="text-2xl md:text-3xl font-bold text-blue-800 dark:text-cyan-300">
+    <div className="bg-green-500 bg-opacity-10 dark:bg-opacity-30 p-4 rounded-lg text-center shadow-md hover:shadow-lg transition-shadow">
+      <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-green-300">
         <NumberTicker value={number} />+
       </h3>
-      <p className="text-sm md:text-base text-cyan-700 font-semibold mt-2">{text}</p>
+      <p className="text-sm md:text-base text-green-700 font-semibold mt-2">{text}</p>
     </div>
   );
 }
 
 function ReviewCard({ name, text }) {
   return (
-    <div className="bg-cyan-100 dark:bg-cyan-900 p-3 rounded-lg mx-3 w-56 shadow-md hover:shadow-lg transition-shadow">
-      <p className="text-sm text-blue-800 dark:text-cyan-200">{text}</p>
-      <p className="text-xs text-cyan-700 dark:text-cyan-400 mt-2">- {name}</p>
+    <div className="bg-green-100 dark:bg-green-900 p-3 rounded-lg mx-3 w-56 shadow-md hover:shadow-lg transition-shadow">
+      <p className="text-sm text-gray-800 dark:text-green-200">{text}</p>
+      <p className="text-xs text-green-700 dark:text-green-400 mt-2">- {name}</p>
     </div>
   );
 }
